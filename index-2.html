@@ -123,9 +123,20 @@
   </head>
 
   <body>
-    <audio controls autoplay style="display: none;">
+    <audio controls autoplay loop style="display: none;" id="autoplay-2">
       <source src="MongChieuXuan.mp3" type="audio/mpeg" >
     </audio>
+    <script>
+      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+      if (!isChrome){
+          $('#iframeAudio').remove()
+      }
+      else {
+          $('#autoplay-2').remove() // just to make sure that it will not have 2x audio in the background 
+      }
+    </script>
+
+
     <h1>Ngọc Mai</h1>
 
     <div class="box">
